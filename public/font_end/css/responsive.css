@@ -1,0 +1,808 @@
+}
+@media (max-width: 991px) {
+
+
+	
+}
+
+
+/* large device :1170px. */
+@media (min-width: 1170px) and (max-width: 1366px) {
+
+    
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+#sliders .item{
+   height: auto;
+
+}
+
+/****************slider section****************/
+
+#sliders .item .carousel-content {
+   
+    top: 40%;
+    transform: translateX(42%);
+    -moz-transform: translateX(42%);
+    -i-transform: translateX(42%);
+    -webkit-transform: translateX(42%);
+    -o-transform: translateX(42%);
+
+}
+.brand-heading {
+    font-size: 30px;
+   
+}
+.carousel-content p {
+    font-size: 15px;
+   
+}
+.carousel-control.left, .carousel-control.right {
+    
+    height: 40px;
+    width: 40px; 
+     }
+     .carousel-control i {
+   
+    margin-top: 8px;
+}
+.carousel-control.left, .carousel-control.right {
+    
+    height: 50px;
+    width: 50px; 
+     }
+     .carousel-control i {
+   
+    margin-top: 13px;
+}
+.captions {
+    float: right;
+    width: 60%;
+    padding: 5px 20px;
+}
+.read_mor {
+    margin-top: -5px;
+}
+.social_icon {
+
+    left: 9px;
+
+    width: 34%;
+}
+.captions h3{
+margin-top: 2px !important;
+}
+.photos img {
+  
+    height: 296px;
+}
+.social_icon {
+    left: 6px;
+    width: 37%;
+}
+
+.styled-icons {
+    left: 36px;
+  }
+}
+@media (min-width: 768px){
+
+ .navbar-nav .dropdown-menu{
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  min-width: 260px;
+  transform: rotate3d(0, 1, 0, 10deg);
+  -moz-transform: rotate3d(0, 13deg, 0, 0);
+  -webkit-transform: rotate3d(0, 13deg, 0, 0);
+  -ms-transform: rotate3d(0, 1, 13deg, 0);
+  -o-transform: rotate3d(0, 1, 13deg, 0);
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.6s ease 0s, opacity 0.6s ease 0s, visibility 0.6s ease 0s;
+  -moz-transition: -moz-transform 0.6s ease 0s, opacity 0.6s ease 0s, visibility 0.6s ease 0s;
+  -webkit-transition: -webkit-transform 0.6s ease 0s, opacity 0.6s ease 0s, visibility 0.6s ease 0s;
+  -ms-transition: -ms-transform 0.6s ease 0s, opacity 0.6s ease 0s, visibility 0.6s ease 0s;
+  -o-transition: -o-transform 0.6s ease 0s, opacity 0.6s ease 0s, visibility 0.6s ease 0s;
+  z-index: 1001;
+}
+.navbar-nav .dropdown-submenu{
+  position: relative;
+}
+.navbar-nav li.dropdown:hover > .dropdown-menu,
+ .navbar-nav .dropdown-submenu:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate3d(0, 1, 0, 0deg);
+  -moz-transform: rotate3d(0, 1, 0, 0deg);
+  -webkit-transform: rotate3d(0, 1, 0, 0deg);
+  -ms-transform:rotate3d(0, 1, 0, 0deg);
+  -o-transform: rotate3d(0, 1, 0, 0deg);
+  margin: 0;
+}
+.main_mens > ul > li > .acti:before{
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:-1px;
+  left:50%;
+  width:0;
+  height:0;
+  border-style:solid;
+  border-width:0 7.5px 8px 7.5px;
+  border-color:transparent transparent #fff transparent;
+  margin-left:-8px;
+  opacity:0;
+}
+.main_mens > ul > li:hover > .acti:before{
+opacity:1;
+  -webkit-transition:all 300ms ease-in-out 0.3s;
+  -moz-transition:all 300ms ease-in-out  0.3s;
+  -o-transition:all 300ms ease-in-out  0.3s;
+  transition:all 300ms ease-in-out  0.3s;
+
+}
+/*************************first menu design***********/
+  .nav-main li > a {
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+}
+
+  .navbar-nav li > a:hover,
+  .navbar-nav li.active a,
+  .navbar-nav li.active a:hover,
+  .navbar-nav li.active a:focus,
+  .navbar-nav li.active a:active,
+  .navbar-nav li > a:focus{
+  background: none;
+}
+  .navbar-nav  li.dropdown  ul.dropdown-menu  li {
+  border-bottom: 1px solid #f2f2f2;
+}
+  .navbar-nav  li.dropdown  ul.dropdown-menu  li:last-child{
+  border-bottom: none;
+}
+
+.dropdown-menu li a {
+  
+    padding: 15px 0 12px 20px;  
+    display: block; 
+  
+  /*transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transition: transform 0.4s ease 0s;
+  -moz-transition: -moz-transform 0.4s ease 0s;
+ */
+  font-size: 13px;
+}
+  .navbar-nav li.dropdown ul.dropdown-menu li ul li > a:hover {
+    filter: none;    
+  /*color: #b18ade;
+  transform:translate3d(10px,0,0);
+  -moz-transform: translate3d(10px,0,0);
+*/
+}
+
+.mega-menu-item {
+    position: static !important;
+}
+
+
+ .navbar-nav .dropdown-submenu .dropdown-menu{
+  position: absolute;
+  left: 100%;
+  float: left;  
+  top: 0;
+  margin-left: -5px !important;
+}
+   .navbar-nav .dropdown-menu li.dropdown-submenu:after{
+  content:"\f105";
+  font: normal normal normal 13px/1 FontAwesome;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transition: transform 0.4s ease 0s;
+  -moz-transition: -moz-transform 0.4s ease 0s;
+}
+   .navbar-nav .dropdown-menu li.dropdown-submenu:hover:after{
+  
+  color: #00A4EF;
+  transform: translate3d(10px,0,0);
+  -moz-transform: translate3d(10px,0,0);
+  -webkit-transform: translate3d(10px,0,0);
+  -ms-transform: translate3d(10px,0,0);
+  -o-transform: translate3d(10px,0,0);
+} 
+ .navbar-nav .dropdown-submenu .dropdown-menu{
+	position: absolute;
+	left: 100%;
+	float: left;	
+	top: 0;
+	margin-left: -5px !important;
+}
+
+
+/************************FIND A CLINIC content*************************/
+.client_social_middle {
+    
+    top: 28%;
+    
+}
+
+}
+
+
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+#sliders .item{
+   height: auto;
+
+}
+/****************slider section****************/
+
+#sliders .item .carousel-content {
+   
+    top: 40%;
+    transform: translateX(12%);
+    -moz-transform: translateX(12%);
+    -i-transform: translateX(12%);
+    -webkit-transform: translateX(12%);
+    -o-transform: translateX(12%);
+
+}
+.brand-heading {
+    font-size: 30px;
+   
+}
+.carousel-content p {
+    font-size: 15px;
+   
+}
+.carousel-control.left, .carousel-control.right {
+    
+    height: 40px;
+    width: 40px; 
+     }
+     .carousel-control i {
+   
+    margin-top: 8px;
+}
+.col-ser-half {
+    float: left;
+    width: 49.20%;
+}
+.thumb {
+width: 97%;
+  
+}
+.thumb img{
+	width: 100%;
+}
+/**********************************header section**************************/
+.top_time{
+	text-align: center;
+}
+.top_time ul i {
+    float: none;
+}
+.social-icon {
+    float: none;
+    text-align: center;
+}
+.col-sm-fifty{
+	width: 50%;
+    float: left;
+    margin-bottom: 22px;
+}
+/***********************pricing section****************/
+.price_amount_edit {
+    margin-right: -10px;
+    margin-left: 8px
+}
+/***********************latest astara*********************/
+.post {
+    margin-bottom: 20px;
+}
+.photos img {
+   
+    height: 305px !important;
+}
+/************************FIND A CLINIC content*************************/
+.col_halfs_50{
+
+float: left;
+width: 33.33333333333333%;
+
+}
+.client_social_middle {
+    top: 18%;
+}
+.client_captions h3 a {
+   
+    font-size: 15px;
+}
+.client_captions h6 {
+   
+    font-size: 12px;
+}
+.client_captions span{
+  font-size: 13px;
+}
+
+}
+
+@media(min-width:640px ) and (max-width: 767px){
+#sliders .item{
+   height: auto;
+
+}
+.logo img {
+    margin-left: 217px;
+}
+/*************************servic section**********/
+
+.col-ser-half{
+	float: left;
+	width: 50%;
+}
+.topic_section {
+    padding: 40px 12px;
+
+}
+/************************latest astara******************/
+.col-ser-half{
+	float: left;
+	width: 50%;
+}
+.pri-half{
+	float: left;
+	width: 50%;
+}
+.logo img {
+    margin-left: 145px;
+}
+/************************FIND A CLINIC content*************************/
+.col_halfs_50{
+
+float: left;
+width: 50%;
+
+}
+.client_social_middle {
+    top: 24%;
+}
+.clinic {
+    width: 100%;
+   
+}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+#sliders .item{
+   height: auto;
+
+}
+
+
+
+/****************slider section****************/
+
+#sliders .item .carousel-content {
+   
+    top: 30%;
+    transform: translateX(12%);
+    -moz-transform: translateX(12%);
+    -i-transform: translateX(12%);
+    -webkit-transform: translateX(12%);
+    -o-transform: translateX(12%);
+
+}
+.brand-heading {
+    font-size: 22px;
+   
+}
+.carousel-content p {
+    font-size: 12px;
+   
+}
+.carousel-control.left, .carousel-control.right {
+    
+    height: 40px;
+    width: 40px; 
+     }
+     .carousel-control i {
+   
+    margin-top: 8px;
+}
+/*****************************specialities section*******************/
+.thumb{
+	width: 100%;
+}
+.thumb img{
+	width: 100%;
+}
+/********************************log section************************/
+.logo {
+    height: 70px;
+    padding: 8px 15px;
+    float: none;
+    text-align: center;
+}
+.logo img{
+	    margin-left: 138px;
+}
+.logo > img {
+  height: 147px;
+   
+}
+/**************************middle head section***********************/
+.widgets {
+    text-align: center;
+}
+.widgets i {
+    float: none;
+    text-align: center;
+}
+.widgets-content {
+  margin-left:0px;
+}
+/*********************************our service section*****************/
+.service-area {
+    padding: 50px 0;
+}
+#our_specialities {
+    padding: 50px 0;
+}
+/*******************************our Appoinment Here**********************/
+.model_content {
+    padding: 8px;
+}
+.group_date {
+    width: 100%;
+}
+/*************************tab button section**************/
+.tab_butns .tab-title {
+    padding: 0 22px;
+   
+}
+.tab_butns{
+	margin-top: 40px;
+}
+/****************************latest at astar**************/
+.full_News {
+   
+    padding: 50px 0;
+}
+.post img{
+	width: 100%;
+}
+/************************** latest astara********************/
+.post {
+    margin-bottom: 25px;
+}
+.full_News {
+
+    padding: 30px 0;
+}
+.space-sm {
+   padding-bottom: 0px;
+}
+/*************************our pricing section******************/
+.full_price {
+    padding: 50px 0;
+}
+
+.pricing_table {
+    margin-bottom: 25px;
+}
+.pricing_table img{
+	width: 100%;
+}
+/**************************footer static header border*********/
+.static_head h4:after {
+    left: 3%;
+}
+.col-sm-fifty{
+	width: 50%;
+	float: left;
+	margin-bottom: 22px;
+}
+.logo img {
+    margin-left: 145px;
+}
+.social-icon {
+    float:none; 
+    text-align: center;
+}
+.top_time{
+	text-align: center;
+}
+.top_time ul i {
+    float: none;
+    
+}
+   /****************doctor page design*********************/
+  .photos img{
+    float: left;
+    width: 100%;
+     margin-left: 0px
+}
+.captions{
+  float: none;
+  width: 100%;
+  
+}
+.social_icon{
+left: 146px;
+top:-40%;
+position: absolute;
+-webkit-transition: all 300ms ease-in-out 0s;
+-o-transition: all 300ms ease-in-out 0s;
+transition: all 300ms ease-in-out 0s;
+width: 100%;
+}
+.full_photos:hover .social_icon{
+  top:60%; 
+}
+/******************************doctor details design***********************/
+.pl-60 {
+    padding: 10px !important;
+}
+
+/*****************************CLINIC PROFILe design****************/
+.doctor_detail h2, .clinic_detail h2 {
+    font-size: 20px;
+}
+.clinic_detail p {
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.nav-tabs li {
+    width: 30%;
+}
+.phys_full_section img{
+  width: 100%;
+}
+}
+@media(max-width: 479px){
+
+#sliders .item{
+   height: auto;
+
+}
+	.btn-responsive-nav {
+   
+}
+
+
+/****************slider section****************/
+
+#sliders .item .carousel-content {
+   
+    top: 25%;
+    transform: translateX(11%);
+    -moz-transform: translateX(11%);
+    -i-transform: translateX(11%);
+    -webkit-transform: translateX(11%);
+    -o-transform: translateX(11%);
+
+}
+.brand-heading {
+    font-size: 22px;
+   
+}
+.carousel-content p {
+    display: none;
+   
+}
+.carousel-control.left, .carousel-control.right {
+    
+    height: 40px;
+    width: 40px; 
+     }
+     .carousel-control i {
+   
+    margin-top: 8px;
+}
+
+/*******************head section*****************/
+.top_time{
+
+	text-align: center !important;
+}
+.social-icon{
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+/************************start all sectio padding minuse****************/
+.service-area {
+    padding: 60px 0;
+}
+#our_specialities {
+    padding: 18px 0;
+}
+/*************************appionment section********************/
+.model_content {
+    padding: 8px;
+}
+.group_date {
+    width: 100%;
+}
+/*************************tab button section**************/
+.tab_butns .tab-title {
+    padding: 0 22px;
+   
+}
+.tab_butns{
+	margin-top: 40px;
+}
+/************************** latest astara********************/
+.post {
+    margin-bottom: 25px;
+}
+.full_News {
+
+    padding: 30px 0;
+}
+.space-sm {
+   padding-bottom: 0px;
+}
+/*************************our pricing section******************/
+.full_price {
+    padding: 30px 0;
+}
+
+.pricing_table {
+    margin-bottom: 25px;
+}
+/*****************footer section************************/
+.padd90{
+	padding-top: 25px;
+}
+
+/************************service section*********************/
+.topic_section {
+    padding: 31px 8px;
+   	margin-top: 30px;
+
+   }
+
+   /****************doctor page design*********************/
+  .photos img{
+    float: none;
+    width: 100%;
+     margin-left: 0px
+}
+.captions{
+  float: none;
+  width: 100%;
+  
+}
+.social_icon{
+display: none;
+}
+
+.client_social_middle {
+    position: absolute;
+    width: 95%;
+    top: 24%;
+   
+}
+.client_captions h3 a {
+    
+    font-size: 19px;
+}
+/***********************doctor details design*************/
+.styled-icons {
+    left: 13px;
+}
+.tab-content {
+    padding: 10px 13px 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.pl-60 {
+    padding: 10px !important;
+}
+
+/*****************************CLINIC PROFILe design****************/
+.doctor_detail h2, .clinic_detail h2 {
+    font-size: 20px;
+}
+.clinic_detail p {
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.nav-tabs li {
+    width: 50%;
+}
+}
+
+
+
+
+@media (min-width: 480px) and (max-width: 800px){
+.btn-responsive-nav {
+   
+}
+}
+@media (max-width: 767px){
+/**************************FIND A CLINIC filter section**************/
+.option_drop .form_select {
+    margin-bottom: 13px;
+}
+
+}
+
+@media(max-width: 767px){
+  .main_mens > ul > li > a {
+    color: #fff;
+    background: #262F36;
+    padding: 15px 0 12px 20px!important;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.15)!important;
+    transition: all 0.3s ease;
+  }
+    .navbar-nav li > a:hover,
+  .navbar-nav li.active a,
+  .navbar-nav li.active a:hover,
+  .navbar-nav li.active a:focus,
+  .navbar-nav li.active a:active,
+  .navbar-nav li > a:focus{
+  background: none;
+}
+.main_mens > ul > li > a > i {
+    position: absolute;
+    right: 20px;
+}
+nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #00A4EF!important;
+    border-color: none !important;
+}
+.main_mens > ul > li > ul > li > a, .main-nav > ul > li > ul > li >ul > li > a {
+    padding: 15px 0 12px 20px!important;
+    display: block;
+    font-size: 12px;
+    background-color: #262f36;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.15)!important;
+    transition: all 0.3s ease;
+}
+.executive_full_section img,
+
+.full_charman img{
+  width: 100%;
+}
+}
+.all-colour{
+  color: #FF0000;
+}
