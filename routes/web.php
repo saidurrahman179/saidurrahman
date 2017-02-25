@@ -60,7 +60,7 @@ Route::get('all/area','back_end\areaController@allArea');
 //route for specialities
 
 Route::get('manage/doctor', 'back_end\doctorController');
-// Route::post('manage/doctor', 'back_end\doctorController@sotre');
+Route::post('manage/doctor', 'back_end\doctorController@sotre');
 // Route::get('delete/doctor/{id}', 'back_end\doctorController@deleteDoctor');
 // Route::post('update/doctor/{id}', 'back_end\doctorController@updateDoctor');
 // Route::get('all/doctor', 'back_end\doctorController@allDoctor');

@@ -19,17 +19,41 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Name <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input v-model="inputData.name" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
+            <input name="name" v-model="inputData.name" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
              <span v-if="formErrors['name']" class="error text-danger">{{ formErrors['name']['0'] }}</span> 
           </div>
         </div>
+
+        <div class="form-group" v-if="picture">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12">preview</label>
+          <div class="col-sm-7 controls">
+            <img style="width: 100px;display: block;" :src="picture">
+            <button type="button" v-on:click="removeImage" class="btn btn-primary">Remove Image</button>
+          </div>
+
+        </div>
+       
+        
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" >Profile Picture</label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+          <!-- The file input field used as target for the file upload widget -->
+          <input v-on:change="previewThumbnail" type="file"  name="picture">
+          
+          </span> 
+          <br><span v-if="formErrors['picture']" class="error text-danger">{{ formErrors['picture']['0'] }}</span>
+          </div>
+
+        </div>
+
 
 
        <div class="form-group">
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Designation <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input v-model="inputData.designation" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
+            <input name="designation" v-model="inputData.designation" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
              <span v-if="formErrors['designation']" class="error text-danger">{{ formErrors['designation']['0'] }}</span> 
           </div>
         </div>
@@ -38,7 +62,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Address <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input v-model="inputData.address" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
+            <input name="address" v-model="inputData.address" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
              <span v-if="formErrors['address']" class="error text-danger">{{ formErrors['address']['0'] }}</span> 
           </div>
         </div>
@@ -47,8 +71,8 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Education: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input v-model="inputData.address" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
-             <span v-if="formErrors['address']" class="error text-danger">{{ formErrors['address']['0'] }}</span> 
+            <input name="education" v-model="inputData.education" type="text" id="first-name" class="form-control col-md-7 col-xs-12">
+             <span v-if="formErrors['education']" class="error text-danger">{{ formErrors['education']['0'] }}</span> 
           </div>
         </div>
 
@@ -56,7 +80,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Professional Experience: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <textarea v-model="inputData.experience" id="message" required="required" class="form-control" ></textarea>
+           <textarea name="experience" v-model="inputData.experience" id="message" required="required" class="form-control" ></textarea>
              <span v-if="formErrors['experience']" class="error text-danger">{{ formErrors['experience']['0'] }}</span> 
           </div>
         </div>
@@ -65,7 +89,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Special Interests: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <textarea v-model="inputData.interests" id="message" required="required" class="form-control" name="message" ></textarea>
+           <textarea name="message" v-model="inputData.interests" id="message" required="required" class="form-control"  ></textarea>
              <span v-if="formErrors['interests']" class="error text-danger">{{ formErrors['interests']['0'] }}</span> 
           </div>
         </div>
@@ -74,7 +98,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Short Discription: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <textarea v-model="inputData.short_discription" id="message" required="required" class="form-control" name="message" ></textarea>
+           <textarea name="short_discription" v-model="inputData.short_discription" id="message" required="required" class="form-control" ></textarea>
              <span v-if="formErrors['short_discription']" class="error text-danger">{{ formErrors['short_discription']['0'] }}</span> 
           </div>
         </div>
@@ -83,7 +107,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Discription: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <textarea v-model="inputData.discription" id="message" required="required" class="form-control" name="message" ></textarea>
+           <textarea name="discription" v-model="inputData.discription" id="message" required="required" class="form-control"  ></textarea>
              <span v-if="formErrors['discription']" class="error text-danger">{{ formErrors['discription']['0'] }}</span> 
           </div>
         </div>
@@ -92,9 +116,10 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Country: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <select  class="form-control" v-model="inputData.country">
+           <select  name="country" class="form-control" v-on:change="changeCity()" v-model="fillItem.country">
               
                <!-- v-on:change="onChange()" -->
+        
                 <option v-for="country in allCountryList" v-bind:value="country.id"  >{{country.country_name}}</option>
                
             </select>
@@ -107,10 +132,10 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">City: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <select  class="form-control" v-model="inputData.city">
+           <select name="city" class="form-control" v-model="inputData.city">
               
                <!-- v-on:change="onChange()" -->
-                <option v-for="country in allCountryList" v-bind:value="country.id"  >{{country.country_name}}</option>
+                <option v-for="city in allCityList" v-bind:value="city.id"  >{{city.city_name}}</option>
                
             </select>
             <span v-if="formErrors['city']" class="error text-danger">{{ formErrors['city']['0'] }}</span>
@@ -122,7 +147,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Area: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <select  class="form-control" v-model="inputData.area">
+           <select name="area"  class="form-control" v-model="inputData.area">
               
                <!-- v-on:change="onChange()" -->
                 <option v-for="country in allCountryList" v-bind:value="country.id"  >{{country.country_name}}</option>
@@ -223,22 +248,32 @@
             formErrors:{},
             formUpdateErrors:{},
             allData:[],
-            fillItem : {'specialitie':'','id':''},
-            
+            fillItem : {'specialitie':'','id':'','country':''},
+             allCountryList:[],
+             allCityList:[],
+            picture:"",
+           
             }
         },
         created(){
           this.getData();
+           this.allCountry();
         },
         methods:{
                 createItem: function(){
               
-              var inputData = this.inputData;
-              
-              this.$http.post('/manage/speciality',inputData).then(response => {
+            
+
+              // somewhere in your Vue app.js file
+              Vue.http.options.emulateJSON = true;
+
+              // then in your code...
+              let formData = new FormData(document.getElementById('demo-form2'));
+
+              this.$http.post('/manage/doctor',formData).then(response => {
 
                 // get body data
-                inputData.specialitie="";
+               
                $("#create-item").modal('hide');
                 toastr.success('Item Created Successfully.', 'Success Alert', {timeOut: 5000});
              
@@ -264,6 +299,35 @@
                //this.formErrors = response.data;
               });
           },
+
+           allCountry:function(){
+            this.$http.get('/all/country').then(response => {
+                 
+                // get body data
+                this.allCountryList = response.data;
+                
+             
+              }, (response) => {
+                // error callback
+               //this.formErrors = response.data;
+              });
+          }, 
+
+          changeCity:function(){
+          var id = this.fillItem.country;
+
+            this.$http.get('/all/city/by/country/'+id).then(response => {
+                 
+                // get body data
+                this.allCityList = response.data;
+                
+             
+              }, (response) => {
+                // error callback
+               //this.formErrors = response.data;
+              });
+          },
+
 
          
           itemDelete:function(item){
@@ -307,7 +371,25 @@
 
               this.getData();
 
-          }
+          },
+
+              previewThumbnail:function(event){
+              var input = event.target;
+                 if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    var vm = this;
+
+                    reader.onload = function(e) {
+                        vm.picture = e.target.result;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            },
+            removeImage :function(){
+              this.picture = "";
+             
+            }
         }
     }
 </script>
