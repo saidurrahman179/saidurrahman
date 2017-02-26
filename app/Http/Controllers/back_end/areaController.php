@@ -71,5 +71,11 @@ class areaController extends Controller
 
       $data = city::where('country_id',$id)->get();
       return response()->json($data);     
+    } 
+     public function selectArea($id){
+      
+
+      $data = area::where('city_id',$id)->get();
+      return response()->json($data);     
     }
 }

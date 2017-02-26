@@ -89,7 +89,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Special Interests: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <textarea name="message" v-model="inputData.interests" id="message" required="required" class="form-control"  ></textarea>
+           <textarea name="interests" v-model="inputData.interests" id="message" required="required" class="form-control"  ></textarea>
              <span v-if="formErrors['interests']" class="error text-danger">{{ formErrors['interests']['0'] }}</span> 
           </div>
         </div>
@@ -132,7 +132,7 @@
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">City: <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-           <select name="city" class="form-control" v-model="inputData.city">
+           <select name="city" class="form-control" v-on:change="changeArea()" v-model="fillItem.city">
               
                <!-- v-on:change="onChange()" -->
                 <option v-for="city in allCityList" v-bind:value="city.id"  >{{city.city_name}}</option>
@@ -150,7 +150,7 @@
            <select name="area"  class="form-control" v-model="inputData.area">
               
                <!-- v-on:change="onChange()" -->
-                <option v-for="country in allCountryList" v-bind:value="country.id"  >{{country.country_name}}</option>
+                <option v-if="allCityList" v-for="area in allAreaList" v-bind:value="area.id"  >{{area.area_name}}</option>
                
             </select>
             <span v-if="formErrors['area']" class="error text-danger">{{ formErrors['area']['0'] }}</span>
@@ -158,11 +158,43 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Speciality: <span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+           <select name="speciality"  class="form-control" >
+              
+               <!-- v-on:change="onChange()" -->
+                <option  v-for="Speciality in allSpecialityList" v-bind:value="Speciality.id"  >{{Speciality.specialitie_name}}</option>
+               
+            </select>
+            <span v-if="formErrors['speciality']" class="error text-danger">{{ formErrors['speciality']['0'] }}</span>
+             
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">status: <span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+           <select name="status"  class="form-control" >
+              
+               <!-- v-on:change="onChange()" -->
+                <option value="1"  >Published</option>
+                <option value="0"  >Un Published</option>
+               
+            </select>
+            <span v-if="formErrors['status']" class="error text-danger">{{ formErrors['status']['0'] }}</span>
+             
+          </div>
+        </div>
+
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button v-if="loading" disabled type="submit" class="btn btn-primary">Loading....</button>
+        <button v-if="!loading" type="submit" class="btn btn-primary">Submit</button>
       </div>
      </form> 
     </div>
@@ -194,7 +226,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button v-if="loading" type="submit" class="btn btn-primary">Loading...</button>
+        <button v-if="!loading" type="submit" class="btn btn-primary">Submit</button>
       </div>
      </form> 
     </div>
@@ -215,7 +248,8 @@
         <table id="datatable-buttons" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Speciality Name</th>
+              <th> Image</th>
+              <th> Name</th>
               <th>Status</th>
               <th>Action</th>
               
@@ -225,7 +259,10 @@
 
           <tbody>
             <tr v-for="item in allData">
-              <td>{{item.specialitie_name}}</td>
+              <td>
+              <img :src="item.picture" width="150px">
+              </td>
+              <td>{{item.name}}</td>
               <td><p v-if="item.status == 1">Active</p><p v-if="item.status == 0">Un Active</p></td>
               <td><button v-on:click="editItem(item)"  class="btn btn-primary">Edit</button><button v-on:click="itemDelete(item)" class="btn btn-primary">Delete</button></td>
             </tr>
@@ -243,26 +280,33 @@
     export default {
         data(){
         return{
-            formStatus:false,
+           
             inputData:{specialitie:""},
             formErrors:{},
             formUpdateErrors:{},
             allData:[],
-            fillItem : {'specialitie':'','id':'','country':''},
+            fillItem : {'specialitie':'','id':'','country':'','city':''},
              allCountryList:[],
              allCityList:[],
+             allAreaList:[],
+             allSpecialityList:[],
+             loading:false,
             picture:"",
+
+           
+           
            
             }
         },
         created(){
           this.getData();
            this.allCountry();
+           this.allSpeciality();
         },
         methods:{
                 createItem: function(){
               
-            
+               this.loading=false;
 
               // somewhere in your Vue app.js file
               Vue.http.options.emulateJSON = true;
@@ -273,10 +317,10 @@
               this.$http.post('/manage/doctor',formData).then(response => {
 
                 // get body data
+                this.loading=true;
                
-               $("#create-item").modal('hide');
                 toastr.success('Item Created Successfully.', 'Success Alert', {timeOut: 5000});
-             
+                $("#create-item").modal('hide');
               }, (response) => {
                 // error callback
                this.formErrors = response.data;
@@ -288,7 +332,7 @@
         },
 
           getData:function(){
-            this.$http.get('/all/speciality').then(response => {
+            this.$http.get('/all/doctor').then(response => {
                  
                 // get body data
                 this.allData = response.data;
@@ -328,6 +372,33 @@
               });
           },
 
+          changeArea:function(){
+          var id = this.fillItem.city;
+
+            this.$http.get('/all/area/by/country/'+id).then(response => {
+                 
+                // get body data
+                this.allAreaList = response.data;
+                
+             
+              }, (response) => {
+                // error callback
+               //this.formErrors = response.data;
+              });
+          },
+
+          allSpeciality:function(){
+          this.$http.get('/all/speciality').then(response => {
+                 
+                // get body data
+                this.allSpecialityList = response.data;
+                
+             
+              }, (response) => {
+                // error callback
+               //this.formErrors = response.data;
+              });
+          },
 
          
           itemDelete:function(item){
@@ -358,7 +429,7 @@
           var inputData = this.fillItem;
               
               this.$http.post('/update/speciality/'+id,inputData).then(response => {
-
+             
                 // get body data
                 inputData.specialitie="";
                $("#edit-item").modal('hide');
