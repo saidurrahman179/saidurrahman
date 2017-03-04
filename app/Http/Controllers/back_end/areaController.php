@@ -73,8 +73,6 @@ class areaController extends Controller
       return response()->json($data);     
     } 
      public function selectArea($id){
-      
-
       $data = area::where('city_id',$id)->get();
       return response()->json($data);     
     }

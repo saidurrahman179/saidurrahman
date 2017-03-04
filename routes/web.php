@@ -62,6 +62,7 @@ Route::get('all/area','back_end\areaController@allArea');
 Route::get('manage/doctor', 'back_end\doctorController');
 Route::post('manage/doctor', 'back_end\doctorController@sotre');
 Route::get('all/area/by/country/{id}', 'back_end\areaController@selectArea');
-// Route::get('delete/doctor/{id}', 'back_end\doctorController@deleteDoctor');
+Route::get('delete/doctor/{id}', 'back_end\doctorController@deleteDoctor');
 // Route::post('update/doctor/{id}', 'back_end\doctorController@updateDoctor');
 Route::get('all/doctor', 'back_end\doctorController@allDoctor');
+//Route::get('show/single/doctor/{id}', 'back_end\doctorController@singleDoctor');

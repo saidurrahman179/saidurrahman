@@ -69,11 +69,23 @@ class doctorController extends Controller
             ->join('cities', 'doctors.city_id', '=', 'cities.id')
            	->join('areas', 'doctors.area_id', '=', 'areas.id')
             ->join('specialities', 'doctors.speciality_id', '=', 'specialities.id')
-            ->select('doctors.*', 'countries.*', 'cities.*', 'areas.*', 'specialities.*')
+            ->select('doctors.*', 'countries.country_name', 'cities.city_name', 'areas.area_name', 'specialities.specialitie_name')
             ->get();
 
 
       
        return response()->json($data); 
     }
+
+    public function deleteDoctor($id){
+         $data =doctor::find($id);
+      $data->delete();
+      $success = 'success';
+      return response()->json($success);
+    }
+
+    // public function singleDoctor($id){
+    //     $data =doctor::find($id);
+    //      return response()->json($data);
+    // }
 }
